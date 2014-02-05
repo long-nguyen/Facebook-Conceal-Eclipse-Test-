@@ -22,7 +22,7 @@ import android.widget.Toast;
 
 import com.facebook.crypto.Crypto;
 import com.facebook.crypto.Entity;
-import com.facebook.crypto.keychain.SharedPrefsBackedKeyChain;
+import com.facebook.crypto.keychain.MyKeyChain;
 import com.facebook.crypto.util.SystemNativeCryptoLibrary;
 
 public class MainActivity extends Activity {
@@ -36,8 +36,8 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 		//According to facebook sample, they use SharedPrefsBackedKeychain,
 		//but it leads to unable to continue using saved data on SDCard if your app is uninstalled and newly installed
-		//So planning to customize other key
-		crypto = new Crypto(new SharedPrefsBackedKeyChain(this),
+		//So planning to customize other keychain
+		crypto = new Crypto(new MyKeyChain(this,"bmd1eWVudGllbmxvbmc="),
 				new SystemNativeCryptoLibrary());
 		if (!crypto.isAvailable()) {
 			return;
