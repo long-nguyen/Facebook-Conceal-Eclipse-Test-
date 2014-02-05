@@ -11,6 +11,7 @@ Step I made:
 + Move native code to lib folder
 + Move third party code to lib folder
 + Test
+
 In lib folder, there are some jar file structured in sub-folder, must add them
 all to build path.
  
