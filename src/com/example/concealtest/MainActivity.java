@@ -10,6 +10,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -66,6 +67,14 @@ public class MainActivity extends Activity {
 				decode();
 			}
 
+		});
+		
+		findViewById(R.id.testVideo).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(MainActivity.this,VideoTest.class));
+			}
 		});
 	}
 
